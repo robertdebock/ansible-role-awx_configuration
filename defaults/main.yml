@@ -1,0 +1,17 @@
+---
+# defaults file for awx_configuration
+
+awx_configuration_controller_host: localhost
+awx_configuration_controller_password: "My_P@ssw0rd"
+awx_configuration_controller_username: admin
+
+awx_configuration_credentials:
+  - name: Team Name
+    description: Team Description
+    organization: test-org
+    credential_type: Machine
+  - name: Other Team in the Default organization
+    description: Some other Team
+    credential_type: Ansible Galaxy/Automation Hub API Token
+  - name: An absent organization
+    state: absent
