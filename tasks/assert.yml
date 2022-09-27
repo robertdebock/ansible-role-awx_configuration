@@ -15,5 +15,6 @@
     quiet: yes
 
 - name: Test if items in awx_configuration_credentials are set correctly
-  ansible.builtin.include: assert_awx_configuration_credentials.yml
+  ansible.builtin.include_tasks:
+    file: assert_awx_configuration_credentials.yml
   loop: "{{ awx_configuration_credentials }}"
