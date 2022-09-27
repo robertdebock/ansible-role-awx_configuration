@@ -1,20 +1,20 @@
 ---
 
-- name: test if awx_configuration_file is set correctly
+- name: Test if awx_configuration_file is set correctly
   ansible.builtin.assert:
     that:
       - awx_configuration_file is defined
       - awx_configuration_file is string
     quiet: yes
 
-- name: test if awx_configuration_credentials is set correctly
+- name: Test if awx_configuration_credentials is set correctly
   ansible.builtin.assert:
     that:
       - awx_configuration_credentials is defined
       - awx_configuration_credentials is iterable
     quiet: yes
 
-- name: test if items in awx_configuration_credentials are set correctly
+- name: Test if items in awx_configuration_credentials are set correctly
   ansible.builtin.include: assert_awx_configuration_credentials.yml
   loop: "{{ awx_configuration_credentials }}"
 
