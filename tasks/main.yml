@@ -17,3 +17,5 @@
     controller_password: "{{ awx_configuration_controller_password }}"
     controller_username: "{{ awx_configuration_controller_username }}"
   loop: "{{ awx_configuration_credentials }}"
+  when:
+    - awx_configuration_ci != "true"
