@@ -1,5 +1,2 @@
 ---
 # vars file for awx_configuration
-
-# Save an environment variable.
-awx_configuration_ci: "{{ lookup('ansible.builtin.env', 'CI') }}"

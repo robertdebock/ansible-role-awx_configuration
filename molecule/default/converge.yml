@@ -6,3 +6,4 @@
 
   roles:
     - role: ansible-role-awx_configuration
+      awx_configuration_ci: yes
