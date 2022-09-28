@@ -7,3 +7,16 @@
   roles:
     - role: ansible-role-awx_configuration
       awx_configuration_ci: yes
+      awx_configuration_organizations:
+        - name: My organization
+          description: My organization description
+          # galaxy_credentials:
+          #   - My Galaxy credential
+      awx_configuration_credentials:
+        - name: My credential
+          description: My credential description
+          organization: My organization
+          credential_type: Machine
+        - name: My Galaxy credential
+          description: My Galaxy credential description
+          credential_type: Ansible Galaxy/Automation Hub API Token

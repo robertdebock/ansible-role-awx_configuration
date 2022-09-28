@@ -8,14 +8,18 @@ awx_configuration_controller_host: localhost
 awx_configuration_controller_password: "My_P@ssw0rd"
 awx_configuration_controller_username: admin
 
-# A list of credentials to create in AWX.
-awx_configuration_credentials:
-  - name: Team Name
-    description: Team Description
-    organization: test-org
-    credential_type: Machine
-  - name: Other Team in the Default organization
-    description: Some other Team
-    credential_type: Ansible Galaxy/Automation Hub API Token
+# Note: An organization can refer to a credential and a credential can refer to an organization.
+# This is basically a cyclic dependency this Ansible role can't fix.
+# You may need to run a playbook twice:
+# - first to create the credential
+# - next to create the organization.
+# (Or the other way around.)
 
+# A list of organizations to create in AWX.
+awx_configuration_organizations: []
+
+# A list of credentials to create in AWX.
+awx_configuration_credentials: []
+
+# It's difficult to test this role in CI, AWX is not available.
 awx_configuration_ci: no
