@@ -13,5 +13,3 @@ awx_configuration_credentials:
   - name: Other Team in the Default organization
     description: Some other Team
     credential_type: Ansible Galaxy/Automation Hub API Token
-  - name: An absent organization
-    state: absent
