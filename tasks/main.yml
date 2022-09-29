@@ -10,7 +10,7 @@
   awx.awx.organization:
     name: "{{ item.name }}"
     description: "{{ item.description | default(omit) }}"
-    galaxy_credentials: "{{ item.galaxy_credentials }}"
+    galaxy_credentials: "{{ item.galaxy_credentials | default(omit) }}"
     controller_host: "{{ awx_configuration_controller_host }}"
     controller_password: "{{ awx_configuration_controller_password }}"
     controller_username: "{{ awx_configuration_controller_username }}"

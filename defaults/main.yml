@@ -1,8 +1,8 @@
 ---
 # defaults file for awx_configuration
 
-# The hostname (not URL) of the AWX instance to connect to.
-awx_configuration_controller_host: localhost
+# The hostname (actually URL) of the AWX instance to connect to.
+awx_configuration_controller_host: "http://localhost"
 
 # Credentials for AWX.
 awx_configuration_controller_password: "My_P@ssw0rd"

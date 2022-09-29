@@ -5,6 +5,7 @@
     that:
       - awx_configuration_controller_host is defined
       - awx_configuration_controller_host is string
+      - awx_configuration_controller_host is regex("^https?://.*")
     quiet: yes
 
 - name: Test if awx_configuration_controller_password is set correctly
