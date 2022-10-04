@@ -4,7 +4,7 @@ Configure AWX.
 
 |GitHub|GitLab|Quality|Downloads|Version|
 |------|------|-------|---------|-------|
-|[![github](https://github.com/robertdebock/ansible-role-awx_configuration/workflows/Ansible%20Molecule/badge.svg)](https://github.com/robertdebock/ansible-role-awx_configuration/actions)|[![gitlab](https://gitlab.com/robertdebock/ansible-role-awx_configuration/badges/master/pipeline.svg)](https://gitlab.com/robertdebock/ansible-role-awx_configuration)|[![quality](https://img.shields.io/ansible/quality/)](https://galaxy.ansible.com/robertdebock/awx_configuration)|[![downloads](https://img.shields.io/ansible/role/d/)](https://galaxy.ansible.com/robertdebock/awx_configuration)|[![Version](https://img.shields.io/github/release/robertdebock/ansible-role-awx_configuration.svg)](https://github.com/robertdebock/ansible-role-awx_configuration/releases/)|
+|[![github](https://github.com/robertdebock/ansible-role-awx_configuration/workflows/Ansible%20Molecule/badge.svg)](https://github.com/robertdebock/ansible-role-awx_configuration/actions)|[![gitlab](https://gitlab.com/robertdebock/ansible-role-awx_configuration/badges/master/pipeline.svg)](https://gitlab.com/robertdebock/ansible-role-awx_configuration)|[![quality](https://img.shields.io/ansible/quality/60492)](https://galaxy.ansible.com/robertdebock/awx_configuration)|[![downloads](https://img.shields.io/ansible/role/d/60492)](https://galaxy.ansible.com/robertdebock/awx_configuration)|[![Version](https://img.shields.io/github/release/robertdebock/ansible-role-awx_configuration.svg)](https://github.com/robertdebock/ansible-role-awx_configuration/releases/)|
 
 ## [Example Playbook](#example-playbook)
 
@@ -19,6 +19,20 @@ This example is taken from `molecule/default/converge.yml` and is tested on each
 
   roles:
     - role: robertdebock.awx_configuration
+      awx_configuration_ci: yes
+      awx_configuration_organizations:
+        - name: My organization
+          description: My organization description
+          # galaxy_credentials:
+          #   - My Galaxy credential
+      awx_configuration_credentials:
+        - name: My credential
+          description: My credential description
+          organization: My organization
+          credential_type: Machine
+        - name: My Galaxy credential
+          description: My Galaxy credential description
+          credential_type: Ansible Galaxy/Automation Hub API Token
 ```
 
 The machine needs to be prepared. In CI this is done using `molecule/default/prepare.yml`:
@@ -44,20 +58,28 @@ The default values for the variables are set in `defaults/main.yml`:
 ---
 # defaults file for awx_configuration
 
-awx_configuration_controller_host: localhost
+# The hostname (actually URL) of the AWX instance to connect to.
+awx_configuration_controller_host: "http://localhost"
+
+# Credentials for AWX.
 awx_configuration_controller_password: "My_P@ssw0rd"
 awx_configuration_controller_username: admin
 
-awx_configuration_credentials:
-  - name: Team Name
-    description: Team Description
-    organization: test-org
-    credential_type: Machine
-  - name: Other Team in the Default organization
-    description: Some other Team
-    credential_type: Ansible Galaxy/Automation Hub API Token
-  - name: An absent organization
-    state: absent
+# Note: An organization can refer to a credential and a credential can refer to an organization.
+# This is basically a cyclic dependency this Ansible role can't fix.
+# You may need to run a playbook twice:
+# - first to create the credential
+# - next to create the organization.
+# (Or the other way around.)
+
+# A list of organizations to create in AWX.
+awx_configuration_organizations: []
+
+# A list of credentials to create in AWX.
+awx_configuration_credentials: []
+
+# It's difficult to test this role in CI, AWX is not available.
+awx_configuration_ci: no
 ```
 
 ## [Requirements](#requirements)
