@@ -5,4 +5,4 @@
 repository:
   description: Configure AWX.
   homepage: https://robertdebock.nl/
-  topics: awxconfiguration, ansible, molecule, tox, playbook, hacktoberfest
+  topics: awxconfiguration, ansible, molecule, tox, playbook
