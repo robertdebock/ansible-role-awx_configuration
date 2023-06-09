@@ -13,6 +13,7 @@
     that:
       - awx_configuration_controller_password is defined
       - awx_configuration_controller_password is string
+      - awx_configuration_controller_password is not none
     quiet: yes
 
 - name: assert | Test if awx_configuration_controller_username is set correctly
@@ -20,6 +21,7 @@
     that:
       - awx_configuration_controller_username is defined
       - awx_configuration_controller_username is string
+      - awx_configuration_controller_username is not none
     quiet: yes
 
 - name: assert | Test if awx_configuration_credentials is set correctly
