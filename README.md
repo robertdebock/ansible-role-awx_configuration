@@ -4,7 +4,7 @@ Configure AWX.
 
 |GitHub|GitLab|Quality|Downloads|Version|
 |------|------|-------|---------|-------|
-|[![github](https://github.com/robertdebock/ansible-role-awx_configuration/workflows/Ansible%20Molecule/badge.svg)](https://github.com/robertdebock/ansible-role-awx_configuration/actions)|[![gitlab](https://gitlab.com/robertdebock-iac/ansible-role-awx_configuration/badges/master/pipeline.svg)](https://gitlab.com/robertdebock-iac/ansible-role-awx_configuration)|[![quality](https://img.shields.io/ansible/quality/60492)](https://galaxy.ansible.com/robertdebock/awx_configuration)|[![downloads](https://img.shields.io/ansible/role/d/60492)](https://galaxy.ansible.com/robertdebock/awx_configuration)|[![Version](https://img.shields.io/github/release/robertdebock/ansible-role-awx_configuration.svg)](https://github.com/robertdebock/ansible-role-awx_configuration/releases/)|
+|[![github](https://github.com/robertdebock/ansible-role-awx_configuration/workflows/Ansible%20Molecule/badge.svg)](https://github.com/robertdebock/ansible-role-awx_configuration/actions)|[![gitlab](https://gitlab.com/robertdebock-iac/ansible-role-awx_configuration/badges/master/pipeline.svg)](https://gitlab.com/robertdebock-iac/ansible-role-awx_configuration)|[![quality](https://img.shields.io/ansible/quality/)](https://galaxy.ansible.com/robertdebock/awx_configuration)|[![downloads](https://img.shields.io/ansible/role/d/)](https://galaxy.ansible.com/robertdebock/awx_configuration)|[![Version](https://img.shields.io/github/release/robertdebock/ansible-role-awx_configuration.svg)](https://github.com/robertdebock/ansible-role-awx_configuration/releases/)|
 
 ## [Example Playbook](#example-playbook)
 
