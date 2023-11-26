@@ -1,4 +1,4 @@
-# Ansible role [awx_configuration](#awx_configuration)
+# [Ansible role awx_configuration](#awx_configuration)
 
 Configure AWX.
 
