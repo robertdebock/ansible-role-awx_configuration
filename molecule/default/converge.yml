@@ -1,12 +1,12 @@
 ---
 - name: Converge
   hosts: all
-  become: yes
-  gather_facts: yes
+  become: true
+  gather_facts: true
 
   roles:
     - role: ansible-role-awx_configuration
-      awx_configuration_ci: yes
+      awx_configuration_ci: true
       awx_configuration_organizations:
         - name: My organization
           description: My organization description
