@@ -18,7 +18,7 @@ This example is taken from [`molecule/default/converge.yml`](https://github.com/
   gather_facts: true
 
   roles:
-    - role: robertdebock.awx_configuration
+    - role: ansible-role-awx_configuration
       awx_configuration_ci: true
       awx_configuration_organizations:
         - name: My organization
