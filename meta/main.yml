@@ -5,27 +5,28 @@ galaxy_info:
   description: Configure AWX.
   license: Apache-2.0
   company: none
-  min_ansible_version: "2.12"
-
+  min_ansible_version: '2.12'
   platforms:
-    - name: Alpine
+    - name: Amazon
       versions:
-        - all
+        - Candidate
     - name: Debian
       versions:
-        - all
+        - bullseye
+        - bookworm
+        - trixie
     - name: EL
       versions:
-        - "9"
+        - '9'
     - name: Fedora
       versions:
-        - all
+        - '42'
+        - '40'
     - name: Ubuntu
       versions:
-        - all
-
+        - jammy
+        - noble
   galaxy_tags:
     - awxconfiguration
     - ansible
-
 dependencies: []
